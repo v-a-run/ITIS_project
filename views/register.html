@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../style.css" />
+    <title>REGISTRATION</title>
+  </head>
+  <body>
+    <body>
+      <div class="register-page">
+        <div class="form">
+          <div class="register">
+            <div class="register-header">
+              <h3>Alumini Registraion</h3>
+            </div>
+          </div>
+          <form class="register-form" method="POST" action="/register">
+            <input
+              name="firstname"
+              type="text"
+              placeholder="First Name"
+              required
+            />
+            <input
+              name="lastname"
+              type="text"
+              placeholder="Last Name"
+              required
+            />
+            <input
+              name="studentId"
+              type="text"
+              placeholder="Student ID"
+              required
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="Email Address"
+              required
+            />
+            <input
+              name="email1"
+              type="email"
+              placeholder="Confirm Email Address"
+              required
+            />
+            <input
+              name="password"
+              type="password"
+              placeholder="Set password"
+              required
+            />
+            <input
+              name="password1"
+              type="password"
+              placeholder="Confirm password"
+              required
+            />
+            <button type="submit">Register</button>
+            <p class="message">
+              Already registered? <a href="/login">Login</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </body>
+  </body>
+</html>
