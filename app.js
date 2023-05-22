@@ -42,14 +42,21 @@ app.post("/login", (req, res) => {
 
 //registration
 app.post("/register", (req, res) => {
-  const { firstname, lastname, studentId, email, password } = req.body;
-
+  const { firstname, lastname, studentId, email, password, email1, password1 } =
+    req.body;
+  console.log(`req.body`, req.body);
   // check if studentId already exists
   findAllstudentId_query = "SELECT * FROM users WHERE studentId = ?";
   db.all(findAllstudentId_query, [studentId], (err, rows) => {
     if (err) {
       console.error(err);
-    } else if (rows) {
+    }
+    // else if (email !== email1) {
+    //   prompt("Emails don't match. Please enter again!!");
+    // } else if (password !== password1) {
+    //   prompt("Passwords don't match. Please enter again!!");
+    // }
+    else if (rows) {
       let flag = true;
       rows.forEach((row) => {
         if (row.studentId === studentId) {
@@ -81,7 +88,7 @@ app.post("/register", (req, res) => {
                   updateFilenames_query,
                   [transcript_name, certificate_name, studentId],
                   (err, rows) => {
-                    console.log(`rows`, rows);
+                    // console.log(`rows`, rows);
                     db.close();
                   }
                 );
